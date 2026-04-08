@@ -1,0 +1,9 @@
+# rundbat project configuration
+# See: https://github.com/ericbusboom/rundbat
+#
+# app_name: The name of your application. Used to name Docker containers and databases.
+# Update this to match your project name.
+
+app_name: astro-template
+container_template: "{app}-{env}"
+notes: []
