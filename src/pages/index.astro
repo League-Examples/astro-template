@@ -1,0 +1,153 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Welcome to Astro">
+  <main>
+    <div class="container">
+      <div class="hero">
+        <div class="logo-box">
+          <img src="/favicon.svg" width="60" height="60" alt="Astro Logo" />
+        </div>
+        <h1>Welcome to <span class="text-gradient">Astro</span></h1>
+        <p class="tagline">
+          A minimal, fast, and flexible template for building your Astro website.
+        </p>
+        <div class="cta-buttons">
+          <a class="btn btn-primary" href="https://docs.astro.build" target="_blank">
+            Read the Docs
+          </a>
+          <a class="btn btn-secondary" href="https://astro.build/integrations" target="_blank">
+            Add Integrations
+          </a>
+        </div>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <h2>🚀 Static by Default</h2>
+          <p>
+            Astro renders your pages at build time, shipping zero JavaScript by default.
+            Fast, SEO-friendly, and easy to deploy anywhere.
+          </p>
+        </div>
+        <div class="card">
+          <h2>🐳 Docker Deployment</h2>
+          <p>
+            Use <a href="https://github.com/ericbusboom/rundbat" target="_blank">rundbat</a>
+            to manage Docker-based deployment environments for testing and production.
+          </p>
+        </div>
+        <div class="card">
+          <h2>⚙️ Configuration</h2>
+          <p>
+            Uses <a href="https://github.com/ericbusboom/dotconfig" target="_blank">dotconfig</a>
+            to manage layered environment configuration across dev, prod, and local overrides.
+          </p>
+        </div>
+        <div class="card">
+          <h2>📦 GitHub Actions</h2>
+          <p>
+            Automatic build and deploy workflows for GitHub Pages via GitHub Actions.
+            Works out of the box after enabling Pages in your repo settings.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+
+  .hero {
+    text-align: center;
+    padding: 3rem 0 2rem;
+  }
+
+  .logo-box {
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0.5rem 0;
+  }
+
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+
+  .tagline {
+    font-size: 1.2rem;
+    color: #888;
+    margin: 1rem 0 2rem;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.6rem 1.4rem;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+
+  .btn:hover {
+    opacity: 0.85;
+  }
+
+  .btn-primary {
+    background: rgb(var(--accent));
+    color: white;
+    -webkit-text-fill-color: white;
+  }
+
+  .btn-secondary {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    -webkit-text-fill-color: white;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+
+  .card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+
+  .card h2 {
+    font-size: 1.1rem;
+    margin: 0 0 0.75rem;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin: 0;
+    line-height: 1.6;
+  }
+</style>
