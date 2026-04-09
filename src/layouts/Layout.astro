@@ -4,7 +4,7 @@ interface Props {
   description?: string;
 }
 
-const { title, description = 'An Astro website' } = Astro.props;
+const { title, description = 'The League of Amazing Programmers — Igniting Young Minds Through Coding' } = Astro.props;
 ---
 
 <!doctype html>
@@ -14,6 +14,7 @@ const { title, description = 'An Astro website' } = Astro.props;
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
     <title>{title}</title>
   </head>
   <body>
@@ -23,33 +24,51 @@ const { title, description = 'An Astro website' } = Astro.props;
 
 <style is:global>
   :root {
-    --accent: 136, 58, 234;
-    --accent-light: 224, 204, 250;
-    --accent-dark: 49, 10, 101;
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      rgb(var(--accent-light)) 30%,
-      white 60%
-    );
+    --red: #e63946;
+    --yellow: #ffe66d;
+    --blue: #1a1a2e;
+    --blue-mid: #16213e;
+    --cyan: #4cc9f0;
+    --orange: #f77f00;
+    --white: #fefefe;
+    --panel-border: 4px solid #111;
   }
 
   * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
 
   html {
-    font-family: system-ui, sans-serif;
-    background: #13151a;
-    color: white;
+    font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
+    background: var(--blue);
+    color: var(--white);
+    scroll-behavior: smooth;
   }
 
   body {
-    margin: 0;
     min-height: 100vh;
+    overflow-x: hidden;
   }
 
   a {
-    color: rgb(var(--accent-light));
+    color: var(--cyan);
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--yellow);
+  }
+
+  /* Halftone dot pattern overlay */
+  .halftone::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(0,0,0,0.15) 1px, transparent 1px);
+    background-size: 6px 6px;
+    pointer-events: none;
+    z-index: 1;
   }
 </style>
