@@ -7,7 +7,16 @@ services:
       - "${PORT:-8080}:80"
     environment:
       - NODE_ENV=${NODE_ENV:-production}
+    labels:
+      caddy: ${SITE_HOSTNAME:-}
+      caddy.reverse_proxy: "{{upstreams 80}}"
+    networks:
+      - caddy
     restart: unless-stopped
+
+networks:
+  caddy:
+    external: true
 
 # Uncomment to add a database backend (requires rundbat setup)
 # See: https://github.com/ericbusboom/rundbat

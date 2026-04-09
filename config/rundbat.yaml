@@ -1,9 +1,14 @@
-# rundbat project configuration
-# See: https://github.com/ericbusboom/rundbat
-#
-# app_name: The name of your application. Used to name Docker containers and databases.
-# Update this to match your project name.
-
 app_name: astro-template
-container_template: "{app}-{env}"
+app_name_source: package.json name
+container_template: '{app}-{env}'
+database_template: '{app}_{env}'
+deployments:
+  dev:
+    compose_file: docker/docker-compose.yml
+    docker_context: orbstack
+  test:
+    compose_file: docker/docker-compose.yml
+    docker_context: docker1.apps1.jointheleague.org
+    hostname: stemecosystem.apps1.jointheleague.org
 notes: []
+∏
